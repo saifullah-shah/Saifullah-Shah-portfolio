@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Chatbot from "@/components/chatbot/chatbot";
+import ScrollToTop from "@/components/scroll-to-top";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         {children}
         <Chatbot />
+        <ScrollToTop />
       </body>
     </html>
   );

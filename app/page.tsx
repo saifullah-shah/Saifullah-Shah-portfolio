@@ -213,51 +213,51 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
+      <section id="hero" className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 pb-8 pt-20 text-center">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(16,185,129,0.15),transparent_60%)]" />
-        <div className="animate-fade-in-up relative">
-          <div className="mb-8 flex justify-center">
+        <div className="hero-scale animate-fade-in-up relative">
+          <div className="mb-5 flex justify-center">
             <div className="relative">
               <div className="absolute -inset-4 rounded-full bg-emerald-400/40 blur-2xl" />
               <div className="relative rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 p-1.5">
                 <Image
-                  src="https://avatars.githubusercontent.com/u/323777318?v=4"
+                  src="/saifullah-shah.png"
                   alt="SaifUllah Shah"
                   width={320}
                   height={320}
                   priority
-                  className="h-48 w-48 rounded-full border-4 border-[#0a0f1a] object-cover md:h-64 md:w-64"
+                  className="h-40 w-40 rounded-full border-4 border-[#0a0f1a] object-cover md:h-52 md:w-52"
                 />
               </div>
             </div>
           </div>
-          <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
-            DevOps &amp; Cloud Engineer
+          <h1 className="text-4xl font-bold tracking-tight md:text-5xl">
+            AI Engineer
             <span className="cursor-blink text-emerald-400">_</span>
           </h1>
-          <p className="mt-3 font-mono text-sm text-slate-400 md:text-base">
-            AWS | Azure | GCP | CI/CD | Docker | Cloud Infrastructure | Automation
+          <p className="mt-2 font-mono text-sm text-slate-400 md:text-base">
+            Agentic Development | Agentic AI | AI Automation | LLM Applications &amp; Intelligent Workflows
           </p>
-          <p className="mx-auto mt-6 max-w-2xl text-base text-slate-300 md:text-lg">
-            Building reliable, scalable, and secure systems that empower teams to
-            deploy with confidence.
+          <p className="mx-auto mt-2 max-w-2xl text-sm leading-6 text-slate-300 md:text-base">
+            Building intelligent, scalable, and reliable AI applications that solve
+            real-world problems and drive innovation.
           </p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-3 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="#projects"
-              className="flex items-center gap-2 rounded-lg bg-emerald-400 px-6 py-3 font-medium text-[#0a0f1a] transition-colors hover:bg-emerald-300"
+              className="flex items-center gap-2 rounded-lg bg-emerald-400 px-5 py-2 font-medium text-[#0a0f1a] transition-colors hover:bg-emerald-300"
             >
               View projects
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="#contact"
-              className="flex items-center gap-2 rounded-lg border border-white/15 px-6 py-3 text-slate-200 transition-colors hover:border-emerald-400/40 hover:text-emerald-400"
+              className="flex items-center gap-2 rounded-lg border border-white/15 px-5 py-2 text-slate-200 transition-colors hover:border-emerald-400/40 hover:text-emerald-400"
             >
               Get in touch
             </a>
           </div>
-          <div className="mt-12 flex justify-center gap-6">
+          <div className="mt-3 flex justify-center gap-6">
             <a
               href="https://github.com/saifullah-shah"
               target="_blank"
@@ -288,7 +288,7 @@ export default function Home() {
         </div>
         <a
           href="#about"
-          className="absolute bottom-8 text-slate-500 transition-colors hover:text-emerald-400"
+          className="absolute bottom-2 text-slate-500 transition-colors hover:text-emerald-400"
           aria-label="Scroll down"
         >
           <ChevronDown className="h-6 w-6 animate-bounce" />

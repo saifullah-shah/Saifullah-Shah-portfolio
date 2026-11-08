@@ -36,8 +36,8 @@ export default function TypingTerminal() {
   }, [charIndex, lineIndex]);
 
   return (
-    <div className="mx-auto mt-12 w-full max-w-xl overflow-hidden rounded-xl border border-white/10 bg-[#0a0f1a]/90 text-left shadow-2xl shadow-emerald-400/5">
-      <div className="flex items-center gap-2 border-b border-white/10 bg-[#0d1424] px-4 py-3">
+    <div className="mx-auto mt-4 w-full max-w-xl overflow-hidden rounded-xl border border-white/10 bg-[#0a0f1a]/90 text-left shadow-2xl shadow-emerald-400/5">
+      <div className="flex items-center gap-2 border-b border-white/10 bg-[#0d1424] px-4 py-2">
         <span className="h-3 w-3 rounded-full bg-red-500/80" />
         <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
         <span className="h-3 w-3 rounded-full bg-green-500/80" />
@@ -49,7 +49,7 @@ export default function TypingTerminal() {
           deploy: prod
         </span>
       </div>
-      <div className="relative overflow-hidden p-5 font-mono text-xs leading-6 sm:text-sm">
+      <div className="relative min-h-[136px] overflow-hidden p-2 font-mono text-xs leading-5 sm:text-sm">
         <div className="pointer-events-none absolute inset-0 animate-scanline h-full w-full bg-gradient-to-b from-transparent via-emerald-400/[0.04] to-transparent" />
         {lineDefinitions.slice(0, lineIndex).map((line, i) => (
           <p
