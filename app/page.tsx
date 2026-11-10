@@ -8,16 +8,19 @@ import {
   ArrowRight,
   Mail,
   Terminal,
-  Server,
   Cloud,
   Workflow,
-  Boxes,
-  Activity,
-  ShieldCheck,
   ExternalLink,
   ChevronDown,
   Database,
   Phone,
+  Bot,
+  Brain,
+  Code2,
+  Network,
+  Sparkles,
+  FlaskConical,
+  Users,
 } from "lucide-react";
 
 function GithubIcon(props: { className?: string }) {
@@ -57,72 +60,116 @@ const navLinks = [
 
 const expertise = [
   {
+    icon: Bot,
+    title: "Agentic AI & Multi-Agent Systems",
+    desc: "Designing AI agents and multi-agent systems that plan, use tools, and automate complex tasks.",
+  },
+  {
+    icon: Brain,
+    title: "LLM Applications & RAG",
+    desc: "Building LLM-powered chatbots and knowledge assistants with prompt engineering, contextual data, and retrieval-augmented generation.",
+  },
+  {
+    icon: Network,
+    title: "MCP & Context-Aware AI",
+    desc: "Applying Model Context Protocol for context-aware AI systems and interoperable tool integration.",
+  },
+  {
+    icon: Sparkles,
+    title: "Generative AI Integration",
+    desc: "Integrating generative AI models and APIs into production applications with grounding, guardrails, and graceful fallbacks.",
+  },
+  {
     icon: Workflow,
-    title: "CI/CD Pipeline Development",
-    desc: "Designing automated build, test, and deployment pipelines that ship rapidly and reliably.",
+    title: "AI Workflow Automation",
+    desc: "Automating business processes with AI-driven workflows, third-party API integrations, and intelligent orchestration.",
   },
   {
-    icon: Server,
-    title: "Infrastructure Automation & IaC",
-    desc: "Codifying infrastructure with Terraform, Ansible, and CloudFormation for reproducible environments.",
-  },
-  {
-    icon: Boxes,
-    title: "Kubernetes & Container Technologies",
-    desc: "Running containerized workloads at scale with orchestration, auto-scaling, and self-healing.",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud Platforms & DevOps Tools",
-    desc: "Architecting across AWS, Azure, and GCP with a toolchain built for velocity and visibility.",
-  },
-  {
-    icon: Activity,
-    title: "Monitoring & Incident Response",
-    desc: "Building observability stacks and runbooks to detect, respond, and recover faster.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "System Design & Scalability",
-    desc: "Designing resilient systems with failover, redundancy, and performance in mind.",
+    icon: Code2,
+    title: "AI Application Engineering",
+    desc: "Developing full-stack AI applications with Python, TypeScript, React, Next.js, and REST APIs.",
   },
 ];
 
 const skillCategories = [
   {
-    title: "Cloud Platforms",
-    icon: Cloud,
-    skills: ["AWS", "Azure", "GCP"],
+    title: "Agentic AI",
+    icon: Bot,
+    skills: [
+      "AI Agents",
+      "Multi-Agent Systems",
+      "MCP",
+      "AI Workflows",
+      "AI-Assisted Development",
+    ],
   },
   {
-    title: "Containerization",
-    icon: Boxes,
-    skills: ["Docker", "Kubernetes", "Docker Compose"],
+    title: "Generative AI & LLMs",
+    icon: Brain,
+    skills: [
+      "LLMs",
+      "RAG",
+      "Prompt Engineering",
+      "Gemini",
+      "Groq",
+      "Claude",
+      "ChatGPT",
+    ],
   },
   {
-    title: "Infrastructure as Code",
-    icon: Server,
-    skills: ["Terraform", "Ansible", "CloudFormation"],
-  },
-  {
-    title: "CI/CD Tools",
-    icon: Workflow,
-    skills: ["Jenkins", "GitLab CI", "GitHub Actions"],
-  },
-  {
-    title: "Monitoring",
-    icon: Activity,
-    skills: ["Prometheus", "Grafana", "ELK Stack"],
+    title: "AI Application Development",
+    icon: Code2,
+    skills: ["FastAPI", "REST APIs", "React.js", "Next.js", "Vite"],
   },
   {
     title: "Programming",
     icon: Terminal,
-    skills: ["Bash", "Python", "Go"],
+    skills: ["Python", "JavaScript", "TypeScript", "C/C++", "Assembly"],
   },
   {
-    title: "Version Control",
+    title: "Databases",
+    icon: Database,
+    skills: ["MongoDB", "MySQL", "DynamoDB", "Amazon RDS", "MS Access"],
+  },
+  {
+    title: "Cloud & DevOps",
+    icon: Cloud,
+    skills: [
+      "AWS",
+      "EC2",
+      "S3",
+      "VPC",
+      "IAM",
+      "CloudWatch",
+      "Linux",
+      "Deployment",
+    ],
+  },
+  {
+    title: "Tools & Platforms",
     icon: GithubIcon,
-    skills: ["Git", "GitHub", "GitLab"],
+    skills: ["Git", "GitHub", "GitLab", "VS Code", "Postman", "OpenCode"],
+  },
+  {
+    title: "Testing & Quality",
+    icon: FlaskConical,
+    skills: [
+      "Unit Testing",
+      "E2E Testing",
+      "API Testing",
+      "Automated Testing",
+      "Debugging",
+    ],
+  },
+  {
+    title: "Soft Skills",
+    icon: Users,
+    skills: [
+      "Technical Presentations",
+      "Requirements Gathering",
+      "Proposal Writing",
+      "Client Communication",
+    ],
   },
 ];
 
@@ -137,6 +184,17 @@ const projects = [
       "Delivers transparent, explainable recommendations that respect hard constraints, flag missing specs, and keep working without the LLM. Functional demo on provenance-aware synthetic data, with live marketplace integration planned.",
     stack: ["Python", "FastAPI", "React", "TypeScript", "Google Gemini"],
     year: "2026",
+  },
+  {
+    title: "GenomeIQ",
+    challenge:
+      "Genomic datasets are complex and difficult to analyze at scale, slowing gene identification and research workflows.",
+    solution:
+      "Built an ML-powered platform combining an SVM classifier and Python backend for automated genomic classification with a React frontend, bridging complex algorithms with practical research workflows. MongoDB manages application data.",
+    impact:
+      "Automated the genomic classification workflow and demonstrated AI's potential in bioinformatics. Presented to Khyber Pakhtunkhwa government officials, receiving formal appreciation and consideration for regional implementation.",
+    stack: ["Python", "SVM", "React", "MongoDB", "Machine Learning"],
+    year: "FYP",
   },
   {
     title: "Kubernetes Platform Migration",
@@ -172,23 +230,25 @@ const projects = [
 
 const journey = [
   {
-    period: "2024 — Present",
-    role: "DevOps & Cloud Engineer",
-    org: "Freelance — Upwork",
+    period: "Mar 2025 — Sep 2026",
+    role: "AI Engineer",
+    org: "Algouistics Inc., Lahore",
     points: [
-      "Working with multiple clients across industries to design, deploy, and maintain cloud infrastructure.",
-      "Delivering DevOps solutions across AWS, Azure, and GCP with a focus on reliability, security, and cost efficiency.",
-      "Maintaining long-term client relationships through reliable technical support and continuous improvements.",
+      "Developed and integrated AI-powered applications using Python, Generative AI, LLMs, and modern AI frameworks.",
+      "Designed Agentic AI solutions with AI agents, intelligent workflows, and task automation.",
+      "Built LLM-powered chatbots and knowledge-based assistants using prompt engineering, contextual data, and API integrations.",
+      "Contributed to full-stack AI development with Python, TypeScript, React.js, and Next.js, applying MCP and RAG concepts.",
     ],
   },
   {
-    period: "2023 — 2024",
-    role: "DevOps & Cloud Engineer — Freelance",
-    org: "Upwork",
+    period: "Sep 2023 — Jan 2025",
+    role: "Lab Engineer",
+    org: "Pak-Austria Fachhochschule, Haripur",
     points: [
-      "Built and managed CI/CD pipelines for automated application build, testing, and deployment.",
-      "Containerized applications with Docker and configured cloud servers, storage, networking, and access controls.",
-      "Automated repetitive infrastructure and deployment tasks to improve efficiency and reliability.",
+      "Conducted practical laboratory sessions in Programming Fundamentals and Object-Oriented Programming (OOP).",
+      "Guided students through hands-on exercises, assignments, and practical lab tasks.",
+      "Explained core programming concepts including control flow, functions, arrays, classes, objects, inheritance, polymorphism, encapsulation, and abstraction.",
+      "Assisted students with writing, reviewing, debugging, and improving code while building structured problem-solving approaches.",
     ],
   },
 ];
@@ -314,18 +374,17 @@ export default function Home() {
           <Reveal>
             <p className="mb-2 font-mono text-sm text-emerald-400">01. About me</p>
             <h2 className="mb-10 text-3xl font-bold tracking-tight md:text-4xl">
-              Bridging development &amp; operations
+              Engineering AI systems that ship
             </h2>
           </Reveal>
           <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
             <Reveal delay={100}>
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
-                With <span className="text-emerald-400">2 years</span> of hands-on
-                experience as a DevOps &amp; Cloud Engineer on Upwork, I&apos;ve worked with
-                clients from different industries to design, deploy, and maintain reliable
-                cloud-based applications and infrastructure. I&apos;m passionate about
-                automation, cloud technologies, and creating seamless deployment pipelines
-                that reduce friction and accelerate time-to-market.
+                I&apos;m an AI Engineer with hands-on experience building AI
+                applications, Generative AI, LLMs, and Agentic AI systems. I specialize in
+                LLM integration, AI agents, multi-agent systems, MCP, and RAG — grounded in
+                a background of technical instruction. I focus on turning complex models
+                into reliable, production-ready assistants and intelligent workflows.
               </p>
             </Reveal>
             <Reveal delay={200}>
@@ -333,16 +392,18 @@ export default function Home() {
                 <p className="mb-4 font-mono text-sm text-slate-400">Focus areas</p>
                 <ul className="space-y-3 text-slate-300">
                   {[
-                    "Infrastructure as Code (IaC) & configuration management",
-                    "CI/CD pipeline design & optimization",
-                    "Cloud infrastructure (AWS/Azure/GCP)",
-                    "Container orchestration & Kubernetes",
-                    "Monitoring, logging & observability",
-                    "System reliability & scalability",
+                    "Agentic AI, AI agents & multi-agent systems",
+                    "LLM applications, RAG & prompt engineering",
+                    "MCP & context-aware AI integration",
+                    "Generative AI grounding, guardrails & fallbacks",
+                    "AI workflow automation & API integrations",
+                    "Full-stack AI development & production deployment",
                   ].map((item) => (
-                    <li key={item} className="flex items-start gap-3">
-                      <span className="mt-2 text-emerald-400">&gt;</span>
-                      {item}
+                    <li key={item} className="flex items-start gap-3 leading-6">
+                      <span className="flex h-6 w-4 shrink-0 items-center justify-center font-mono text-emerald-400">
+                        &gt;
+                      </span>
+                      <span className="min-w-0">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -514,7 +575,7 @@ export default function Home() {
           <Reveal>
             <p className="mb-2 font-mono text-sm text-emerald-400">05. Skills</p>
             <h2 className="mb-12 text-3xl font-bold tracking-tight md:text-4xl">
-              Technical toolkit
+              Skills &amp; capabilities
             </h2>
           </Reveal>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -554,12 +615,11 @@ export default function Home() {
               Professional journey
             </h2>
             <p className="mb-12 max-w-3xl text-lg leading-8 text-slate-300">
-              Over the past 2 years, I&apos;ve worked as a DevOps &amp; Cloud Engineer on
-              Upwork, delivering cloud and DevOps solutions for{" "}
-              <span className="text-emerald-400">multiple clients</span> across AWS,
-              Azure, and GCP. I&apos;ve designed and deployed infrastructure, automated
-              CI/CD pipelines, containerized applications, and helped teams ship with
-              confidence.
+              I&apos;m an AI Engineer with hands-on experience building AI applications,
+              LLM-powered assistants, and agentic workflows. My background spans
+              full-stack AI development, prompt engineering, API integrations, testing,
+              and deployment — grounded in a foundation of software engineering
+              education.
             </p>
           </Reveal>
           <div className="relative space-y-8 border-l border-white/10 pl-6 md:pl-8">
@@ -572,11 +632,13 @@ export default function Home() {
                   {entry.role} <span className="text-slate-500">@</span>{" "}
                   <span className="text-slate-300">{entry.org}</span>
                 </h3>
-                <ul className="mt-2 space-y-1 text-slate-400">
+                <ul className="mt-2 space-y-1.5 text-slate-400">
                   {entry.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2">
-                      <span className="mt-2 text-emerald-400">&gt;</span>
-                      {point}
+                    <li key={point} className="flex items-start gap-2 leading-6">
+                      <span className="flex h-6 w-4 shrink-0 items-center justify-center font-mono text-emerald-400">
+                        &gt;
+                      </span>
+                      <span className="min-w-0">{point}</span>
                     </li>
                   ))}
                 </ul>
