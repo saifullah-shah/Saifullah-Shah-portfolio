@@ -4,14 +4,25 @@
 Syed Saifullah Shah
 
 ## Professional Title
-DevOps & Cloud Engineer
+AI Engineer
 
 ## Professional Focus
-- Cloud Engineering
-- DevOps
+- Agentic AI and multi-agent systems
+- Generative AI and LLM applications
+- Retrieval-Augmented Generation (RAG) and prompt engineering
+- Model Context Protocol (MCP) and context-aware AI
+- AI workflow automation
+- Full-stack AI development
 
-## Cloud and DevOps Background
-Previous hands-on experience delivering AWS-based cloud and deployment solutions for freelance clients.
+## Summary
+AI Engineer with hands-on experience in AI application development, Generative AI, Large Language Models (LLMs), and Agentic AI systems. Skilled in LLM integration, AI agents, multi-agent systems, Model Context Protocol (MCP), and Retrieval-Augmented Generation (RAG). Proficient in Python, JavaScript, TypeScript, API development, and AI-powered workflow automation. Experienced in developing scalable, intelligent applications, LLM-powered chatbots, and knowledge-based AI assistants to solve real-world business problems.
 
-## Cloud Platform
-AWS
+## Highlights
+- 1.5+ years of AI engineering experience (Mar 2025 - Sep 2026).
+- 165+ automated tests written, including 123 Python unit tests and 42 end-to-end HTTP assertions.
+- 2 end-to-end AI projects built: The Buying Studio and GenomeIQ.
+- GenomeIQ received formal appreciation from Khyber Pakhtunkhwa government officials.
+
+## Background
+- Previous experience as a Lab Engineer teaching Programming Fundamentals and Object-Oriented Programming (OOP).
+- Additional foundation in AWS cloud and DevOps fundamentals.

@@ -1,79 +1,48 @@
 # Professional Experience
 
-## Freelance Cloud Engineer
+## AI Engineer
 
-### Company / Platform
-Upwork / Self-Employed
+### Company
+Algouistics Inc.
 
 ### Location
 Lahore, Pakistan
 
 ### Duration
-Feb 2021 - Jan 2024
-
-### Role
-Freelance Cloud Engineer
+Mar 2025 - Sep 2026
 
 ### Overview
-Delivered freelance cloud engineering and DevOps support for multiple clients across a range of small and mid-sized projects.
+Developed and integrated AI-powered applications using Python, Generative AI, Large Language Models (LLMs), and modern AI frameworks.
 
-### Cloud Platform
-AWS
+### Responsibilities and Achievements
+- Developed and integrated AI-powered applications using Python, Generative AI, LLMs, and modern AI frameworks.
+- Designed and implemented Agentic AI solutions, including AI agents, intelligent workflows, and task automation to enhance application capabilities.
+- Built LLM-powered chatbots and knowledge-based AI assistants using prompt engineering, contextual data, and API integrations.
+- Contributed to full-stack AI application development using Python, JavaScript, TypeScript, React.js, and Next.js.
+- Implemented AI-driven automation workflows and third-party API integrations to streamline business processes and improve operational efficiency.
+- Applied Model Context Protocol (MCP) for context-aware AI applications and explored Retrieval-Augmented Generation (RAG) concepts.
+- Performed application testing, debugging, performance optimization, and deployment to support scalable and reliable AI solutions.
+- Used Git, GitHub, and AI-assisted development tools for version control, collaborative development, and code management.
 
-### AWS Services
-- Amazon EC2
-- Amazon S3
-- Amazon VPC
-- AWS IAM
-- Amazon RDS
-- Amazon DynamoDB
-- Amazon CloudWatch
+## Lab Engineer
 
-### AWS Infrastructure
-- Configured EC2 instances
-- Configured cloud storage
-- Configured networking
-- Configured access permissions
-- Configured AWS environments according to project requirements
+### Institution
+Pak-Austria Fachhochschule Institute of Applied Sciences and Technology
 
-### Amazon EC2
-Worked with EC2 instances for application and development requirements.
+### Location
+Haripur, Pakistan
 
-### Amazon S3
-Worked with Amazon S3 for cloud storage and data organization, including bucket configuration and access permissions.
+### Duration
+Sep 2023 - Jan 2025
 
-### Amazon VPC
-Configured VPC networking to support AWS environments.
+### Overview
+Conducted practical laboratory sessions for undergraduate students in Programming Fundamentals and Object-Oriented Programming (OOP).
 
-### AWS IAM
-Configured IAM roles, users, and permissions to support secure AWS environments.
-
-### Amazon RDS
-Worked with RDS for project-specific database requirements and cloud-based application data.
-
-### Amazon DynamoDB
-Worked with DynamoDB for project-specific database requirements and cloud-based application data.
-
-### Amazon CloudWatch
-Used CloudWatch for monitoring AWS resources and investigating operational and configuration issues.
-
-### Deployment
-Assisted with:
-- Website deployment
-- Application deployment
-- Server configuration
-- Environment setup
-- Troubleshooting
-
-### Operating System
-Linux
-
-### Development and Deployment Tools
-- Git
-- GitHub
-
-### Client Work
-Communicated directly with clients to:
-- Understand requirements
-- Troubleshoot technical issues
-- Implement practical cloud solutions
+### Responsibilities and Achievements
+- Conducted practical laboratory sessions for undergraduate students in Programming Fundamentals and Object-Oriented Programming (OOP).
+- Guided students in implementing programming concepts through hands-on exercises, assignments, and practical lab tasks.
+- Explained core programming concepts including variables, control flow, functions, arrays, classes, objects, inheritance, polymorphism, encapsulation, and abstraction.
+- Assisted students with writing, reviewing, debugging, and improving their code while developing structured problem-solving approaches.
+- Provided individual guidance during practical exercises and helped students identify and resolve programming errors.
+- Supported laboratory assessments and practical evaluations while maintaining an organized and productive learning environment.
+- Strengthened technical communication and software problem-solving skills through continuous interaction with students and practical programming instruction.

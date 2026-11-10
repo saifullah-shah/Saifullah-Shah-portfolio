@@ -1,47 +1,69 @@
 # Technical Skills
 
-## Cloud Platform
-- AWS
+## Agentic AI
+- AI Agents
+- Multi-Agent Systems
+- Model Context Protocol (MCP)
+- AI Workflows
+- AI-Assisted Development
 
-## AWS Services
+## Generative AI & LLMs
+- Large Language Models (LLMs)
+- Retrieval-Augmented Generation (RAG)
+- Prompt Engineering
+- Google Gemini
+- Groq
+- Claude
+- ChatGPT
+
+## AI Application Development
+- FastAPI
+- REST APIs
+- React.js
+- Next.js
+- Vite
+
+## Programming
+- Python
+- JavaScript
+- TypeScript
+- C/C++
+- Assembly
+
+## Databases
+- MongoDB
+- MySQL
+- DynamoDB
+- Amazon RDS
+- MS Access
+
+## Cloud & DevOps
+- AWS
 - EC2
 - S3
 - VPC
 - IAM
 - CloudWatch
-- RDS
-- DynamoDB
-
-## DevOps
-- Deployment
-- Server Configuration
-- Troubleshooting
-
-## Operating Systems
 - Linux
+- Deployment
 
-## Version Control
+## Tools & Platforms
 - Git
 - GitHub
+- GitLab
+- VS Code
+- Postman
+- OpenCode
 
-## Cloud Engineering
-- AWS environment configuration
-- EC2 configuration
-- Cloud storage configuration
-- VPC networking
-- IAM roles, users, and permissions
-- Cloud resource monitoring
-- Environment setup
-- Application deployment
-- Website deployment
-- Server configuration
-- Troubleshooting
+## Testing & Quality
+- Unit Testing
+- E2E Testing
+- API Testing
+- Automated Testing
+- Debugging
 
-## Databases
-- Amazon RDS
-- Amazon DynamoDB
-
-## Programming languages
-- C++
-- Python
-- JavaScript
+## Soft Skills
+- Technical Presentations
+- Requirements Gathering
+- Proposal Writing
+- Client Communication

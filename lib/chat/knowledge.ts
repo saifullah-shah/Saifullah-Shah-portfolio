@@ -7,6 +7,7 @@ const knowledgeFiles = [
   "profile.md",
   "experience.md",
   "skills.md",
+  "expertise.md",
   "projects.md",
   "education.md",
   "contact.md",

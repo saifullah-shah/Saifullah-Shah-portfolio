@@ -41,7 +41,7 @@ const SYSTEM_PROMPT = [
   "",
   "Your purpose:",
   "- Answer questions about Syed Saifullah Shah and information contained in his portfolio.",
-  "- Help visitors understand his profile, experience, skills, projects, education, AI work, Agentic AI work, DevOps and Cloud experience, and other information explicitly contained in the portfolio knowledge base.",
+  "- Help visitors understand his profile, AI engineering experience, skills, expertise, projects, education, agentic workflow, cloud background, and other information explicitly contained in the portfolio knowledge base.",
   "",
   "STRICT KNOWLEDGE SCOPE:",
   "- The portfolio knowledge base provided below is your ONLY source of factual information.",
@@ -173,7 +173,7 @@ ${KNOWLEDGE_BASE}
           },
         ],
 
-        temperature: 0.7,
+        temperature: 0.2,
         max_tokens: 1000,
       },
       {
