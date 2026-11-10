@@ -3,10 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 
 const metrics = [
-  { value: 2, suffix: "+", label: "Years of DevOps experience" },
-  { value: 50, suffix: "+", label: "Cloud deployments delivered" },
-  { value: 3, suffix: "", label: "Cloud platforms (AWS · Azure · GCP)" },
-  { value: 99, suffix: "%", label: "Uptime maintained across projects" },
+  {
+    value: 1.5,
+    suffix: "+",
+    label: "Years in AI engineering",
+    decimals: 1,
+  },
+  { value: 165, suffix: "+", label: "Automated tests written", decimals: 0 },
+  { value: 2, suffix: "", label: "End-to-end AI projects built", decimals: 0 },
+  { value: 1, suffix: "", label: "Govt. recognition for AI work", decimals: 0 },
 ];
 
 function CountUp({
@@ -14,11 +19,13 @@ function CountUp({
   suffix,
   start,
   duration = 1600,
+  decimals = 0,
 }: {
   target: number;
   suffix: string;
   start: boolean;
   duration?: number;
+  decimals?: number;
 }) {
   const [display, setDisplay] = useState(0);
 
@@ -29,7 +36,7 @@ function CountUp({
     const tick = (now: number) => {
       const progress = Math.min((now - t0) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(Math.round(target * eased));
+      setDisplay(target * eased);
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
@@ -38,7 +45,7 @@ function CountUp({
 
   return (
     <span>
-      {display}
+      {display.toFixed(decimals)}
       {suffix}
     </span>
   );
@@ -77,7 +84,12 @@ export default function Metrics() {
           className="relative flex flex-col items-center gap-1 bg-[#0d1424] px-6 py-8 text-center"
         >
           <span className="text-4xl font-bold tabular-nums text-emerald-400">
-            <CountUp target={metric.value} suffix={metric.suffix} start={start} />
+            <CountUp
+              target={metric.value}
+              suffix={metric.suffix}
+              start={start}
+              decimals={metric.decimals}
+            />
           </span>
           <span className="text-xs text-slate-400 sm:text-sm">{metric.label}</span>
         </div>

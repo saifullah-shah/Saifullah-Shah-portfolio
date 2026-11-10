@@ -655,11 +655,12 @@ export default function Home() {
           <Reveal>
             <p className="mb-2 font-mono text-sm text-emerald-400">07. Contact</p>
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">
-              Let&apos;s build robust infrastructure together
+              Let&apos;s build intelligent systems together
             </h2>
             <p className="mb-10 text-lg text-slate-300">
-              Whether you&apos;re scaling your systems, streamlining deployments, or
-              transforming your DevOps practices—I&apos;d love to help.
+              Whether you&apos;re hiring an AI Engineer, integrating LLMs into a
+              product, or automating workflows with AI agents — I&apos;d love to hear
+              about it.
             </p>
           </Reveal>
           <Reveal delay={120}>
@@ -669,7 +670,7 @@ export default function Home() {
               className="flex items-center gap-2 rounded-lg bg-emerald-400 px-6 py-3 font-medium text-[#0a0f1a] transition-colors hover:bg-emerald-300"
             >
               <Mail className="h-4 w-4" />
-              Get in touch
+              Email me
             </a>
             <a
               href="https://github.com/saifullah-shah"
@@ -691,7 +692,7 @@ export default function Home() {
               <span className="text-slate-200">+92 302 5733 496</span>
             </p>
             <p className="flex items-center justify-center gap-2">
-              <Database className="h-4 w-4 text-emerald-400" /> Portfolio code on{" "}
+              <GithubIcon className="h-4 w-4 text-emerald-400" /> Portfolio code on{" "}
               <a
                 href="https://github.com/saifullah-shah"
                 className="text-emerald-400 underline-offset-4 hover:underline"
