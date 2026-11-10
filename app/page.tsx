@@ -5,6 +5,14 @@ import Metrics from "@/components/metrics";
 import Pipeline from "@/components/pipeline";
 import AgentLoop from "@/components/agent-loop";
 import {
+  EMAIL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  PORTFOLIO_REPO_URL,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
+import {
   ArrowRight,
   Mail,
   Terminal,
@@ -253,9 +261,37 @@ const journey = [
   },
 ];
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE_NAME,
+  jobTitle: "AI Engineer",
+  url: SITE_URL,
+  image: `${SITE_URL}/saifullah-shah.png`,
+  email: `mailto:${EMAIL}`,
+  sameAs: [GITHUB_URL, LINKEDIN_URL],
+  knowsAbout: [
+    "Agentic AI",
+    "Multi-agent systems",
+    "LLM applications",
+    "Retrieval-augmented generation",
+    "Model Context Protocol",
+    "Generative AI",
+    "AI workflow automation",
+    "Python",
+    "FastAPI",
+    "React",
+    "Next.js",
+  ],
+};
+
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-[#0a0f1a] text-[#e6edf3]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#0a0f1a]/80 backdrop-blur-md">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <a
@@ -285,6 +321,7 @@ export default function Home() {
         </nav>
       </header>
 
+      <main id="main">
       {/* Hero */}
       <section id="hero" className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden px-6 pb-8 pt-20 text-center">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(16,185,129,0.15),transparent_60%)]" />
@@ -295,7 +332,7 @@ export default function Home() {
               <div className="relative rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 p-1.5">
                 <Image
                   src="/saifullah-shah.png"
-                  alt="SaifUllah Shah"
+                  alt={SITE_NAME}
                   width={320}
                   height={320}
                   priority
@@ -332,7 +369,7 @@ export default function Home() {
           </div>
           <div className="mt-3 flex justify-center gap-6">
             <a
-              href="https://github.com/saifullah-shah"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 transition-colors hover:text-emerald-400"
@@ -341,7 +378,7 @@ export default function Home() {
               <GithubIcon className="h-5 w-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/syedsaifullahshah/"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 transition-colors hover:text-emerald-400"
@@ -350,7 +387,7 @@ export default function Home() {
               <LinkedinIcon className="h-5 w-5" />
             </a>
             <a
-              href="mailto:tirmezi17@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="text-slate-400 transition-colors hover:text-emerald-400"
               aria-label="Email"
             >
@@ -480,7 +517,7 @@ export default function Home() {
           <p className="mt-8 text-center text-sm text-slate-500">
             More projects and case studies on{" "}
             <a
-              href="https://github.com/saifullah-shah"
+              href={GITHUB_URL}
               className="text-emerald-400 underline-offset-4 hover:underline"
             >
               GitHub →
@@ -666,14 +703,14 @@ export default function Home() {
           <Reveal delay={120}>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
-              href="mailto:tirmezi17@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="flex items-center gap-2 rounded-lg bg-emerald-400 px-6 py-3 font-medium text-[#0a0f1a] transition-colors hover:bg-emerald-300"
             >
               <Mail className="h-4 w-4" />
               Email me
             </a>
             <a
-              href="https://github.com/saifullah-shah"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-lg border border-white/15 px-6 py-3 transition-colors hover:border-emerald-400/40 hover:text-emerald-400"
@@ -685,7 +722,7 @@ export default function Home() {
           <div className="mt-10 space-y-4 text-sm text-slate-400">
             <p className="flex items-center justify-center gap-2">
               <Mail className="h-4 w-4 text-emerald-400" /> Email:{" "}
-              <span className="text-slate-200">tirmezi17@gmail.com</span>
+              <span className="text-slate-200">{EMAIL}</span>
             </p>
             <p className="flex items-center justify-center gap-2">
               <Phone className="h-4 w-4 text-emerald-400" /> Phone:{" "}
@@ -694,7 +731,7 @@ export default function Home() {
             <p className="flex items-center justify-center gap-2">
               <GithubIcon className="h-4 w-4 text-emerald-400" /> Portfolio code on{" "}
               <a
-                href="https://github.com/saifullah-shah"
+                href={PORTFOLIO_REPO_URL}
                 className="text-emerald-400 underline-offset-4 hover:underline"
               >
                 GitHub
@@ -704,11 +741,13 @@ export default function Home() {
         </div>
       </section>
 
+      </main>
+
       <footer className="border-t border-white/10 py-6">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 font-mono text-xs text-slate-500 md:flex-row">
-          <p>© {new Date().getFullYear()} SaifUllah Shah</p>
+          <p>© {new Date().getFullYear()} {SITE_NAME}</p>
           <p>Built with Next.js &amp; Tailwind CSS</p>
-          <p>Deploy with confidence_</p>
+          <p>Ship intelligent systems_</p>
         </div>
       </footer>
     </div>

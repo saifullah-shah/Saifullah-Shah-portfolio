@@ -3,11 +3,11 @@ import type { ChatMessage, SuggestedQuestion } from "./types";
 export const WELCOME_MESSAGE: ChatMessage = {
   id: "welcome",
   role: "assistant",
-  text: "Hi, I'm the Portfolio Assistant. I can tell you about SaifUllah's AI engineering experience, technical skills, expertise and projects. Pick a question below or type your own.",
+  text: "Hi, I'm the Portfolio Assistant. I can tell you about Saifullah's AI engineering experience, technical skills, expertise and projects. Pick a question below or type your own.",
 };
 
 export const SUGGESTED_QUESTIONS: SuggestedQuestion[] = [
-  { id: "experience", text: "What is Syed's professional experience?" },
+  { id: "experience", text: "What is Saifullah's professional experience?" },
   { id: "skills", text: "What are his technical skills?" },
   { id: "ai-projects", text: "Tell me about his AI projects." },
   { id: "agentic-ai", text: "What is his experience with Agentic AI?" },

@@ -1,6 +1,7 @@
 import Groq from "groq-sdk";
 import { NextResponse } from "next/server";
 import { loadKnowledge } from "@/lib/chat/knowledge";
+import { checkRateLimit, getClientKey } from "@/lib/chat/rate-limit";
 import type { ChatErrorResponse, ChatResponse } from "@/lib/chat/types";
 
 /**
@@ -92,6 +93,22 @@ function errorResponse(
 }
 
 export async function POST(request: Request): Promise<NextResponse> {
+  // 0. Apply a best-effort per-client rate limit before doing any work.
+  const limit = checkRateLimit(getClientKey(request));
+
+  if (!limit.allowed) {
+    return NextResponse.json<ChatErrorResponse>(
+      { error: "Too many requests. Please wait a moment and try again." },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": String(limit.retryAfter),
+          "X-RateLimit-Remaining": "0",
+        },
+      },
+    );
+  }
+
   // 1. Parse JSON body.
   let body: unknown;
 

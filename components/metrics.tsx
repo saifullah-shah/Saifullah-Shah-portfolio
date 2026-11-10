@@ -27,25 +27,34 @@ function CountUp({
   duration?: number;
   decimals?: number;
 }) {
-  const [display, setDisplay] = useState(0);
+  // Render the final value on the server (and for no-JS visitors), then animate
+  // from zero only after the metric strip enters the viewport.
+  const [display, setDisplay] = useState<number | null>(null);
 
   useEffect(() => {
     if (!start) return;
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     let frame: number;
     const t0 = performance.now();
+
     const tick = (now: number) => {
       const progress = Math.min((now - t0) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
       setDisplay(target * eased);
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
+
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
   }, [start, target, duration]);
 
   return (
     <span>
-      {display.toFixed(decimals)}
+      {(display ?? target).toFixed(decimals)}
       {suffix}
     </span>
   );
