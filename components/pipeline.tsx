@@ -1,13 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { GitCommit, FlaskConical, Rocket, Activity, CheckCircle2 } from "lucide-react";
+import {
+  CheckCircle2,
+  FileText,
+  MessageSquareText,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 
 const stages = [
-  { icon: GitCommit, label: "Commit", status: "Push detected" },
-  { icon: FlaskConical, label: "Build & Test", status: "42 tests passed" },
-  { icon: Rocket, label: "Deploy", status: "Rolling update" },
-  { icon: Activity, label: "Monitor", status: "All systems healthy" },
+  { icon: MessageSquareText, label: "Prompt", status: "Question received" },
+  { icon: FileText, label: "Context", status: "Knowledge loaded" },
+  { icon: Sparkles, label: "Generate", status: "Streaming tokens" },
+  { icon: ShieldCheck, label: "Validate", status: "Scope-checked" },
 ];
 
 const STATE_DURATION_MS = 1800;
@@ -27,11 +33,11 @@ export default function Pipeline() {
     <div className="overflow-hidden rounded-xl border border-white/10 bg-[#0a0f1a] p-6">
       <div className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-2 font-mono text-xs text-slate-400">
-          <span className="h-1.5 w-1.5 animate-status-ping rounded-full bg-emerald-400" />
-          pipeline: main → prod
+          <span className="h-1.5 w-1.5 animate-status-ping rounded-full bg-cyan-400" />
+          assistant: portfolio-agent
         </div>
         <span className="font-mono text-xs text-slate-500">
-          trigger: git push origin main
+          trigger: user message
         </span>
       </div>
 
@@ -95,7 +101,7 @@ export default function Pipeline() {
       <div className="mt-6 border-t border-white/10 pt-4 font-mono text-xs text-slate-500">
         <span className="text-emerald-400">$</span> status:{" "}
         {stage >= stages.length
-          ? "full pipeline passed, deploying at 99.9% uptime"
+          ? "answer streamed · grounded in portfolio knowledge"
           : `${stages[stage].label} stage in progress...`}
       </div>
     </div>

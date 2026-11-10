@@ -3,12 +3,11 @@
 import { useEffect, useState } from "react";
 
 const lineDefinitions = [
-  { prompt: "$", text: "deploy --env production" },
-  { prompt: "✔", text: "build container image ........ done (12s)" },
-  { prompt: "✔", text: "run test suite ............... 42 passed" },
-  { prompt: "✔", text: "push to registry ............. done" },
-  { prompt: "⟶", text: "rolling update (3/3 replicas) healthy" },
-  { prompt: "✓", text: "deployment successful in 0m 58s" },
+  { prompt: "$", text: 'ask "what has Saif built?"' },
+  { prompt: "✔", text: "context loaded ............... portfolio knowledge" },
+  { prompt: "⟶", text: "generating with gpt-oss-20b" },
+  { prompt: "✔", text: "response streamed ............ 1.2s" },
+  { prompt: "✓", text: "grounded answer · scope verified" },
 ];
 
 const LINE_DELAY_MS = 900;
@@ -42,11 +41,11 @@ export default function TypingTerminal() {
         <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
         <span className="h-3 w-3 rounded-full bg-green-500/80" />
         <span className="ml-3 font-mono text-xs text-slate-500">
-          saifullah@dev: ~/portfolio
+          saifullah@ai: ~/portfolio
         </span>
-        <span className="ml-auto flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-emerald-400">
-          <span className="h-1.5 w-1.5 animate-status-ping rounded-full bg-emerald-400" />
-          deploy: prod
+        <span className="ml-auto flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-cyan-400">
+          <span className="h-1.5 w-1.5 animate-status-ping rounded-full bg-cyan-400" />
+          model: gpt-oss-20b
         </span>
       </div>
       <div className="relative min-h-[136px] overflow-hidden p-2 font-mono text-xs leading-5 sm:text-sm">

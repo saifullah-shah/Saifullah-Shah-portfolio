@@ -3,6 +3,7 @@ import Reveal from "@/components/reveal";
 import TypingTerminal from "@/components/typing-terminal";
 import Metrics from "@/components/metrics";
 import Pipeline from "@/components/pipeline";
+import AgentLoop from "@/components/agent-loop";
 import {
   ArrowRight,
   Mail,
@@ -48,6 +49,7 @@ function LinkedinIcon(props: { className?: string }) {
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
+  { label: "Workflow", href: "#workflow" },
   { label: "Skills", href: "#skills" },
   { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
@@ -126,6 +128,17 @@ const skillCategories = [
 
 const projects = [
   {
+    title: "The Buying Studio",
+    challenge:
+      "Conventional AI laptop recommendations ignore budget limits and essential requirements, and often obscure missing or uncertain specifications.",
+    solution:
+      "Built a full-stack platform with deterministic eligibility and preference-based ranking, structured comparisons, and optional Gemini-powered explanations grounded in product evidence. Decision logic is separated from the AI layer, with graceful fallback when the API is unavailable.",
+    impact:
+      "Delivers transparent, explainable recommendations that respect hard constraints, flag missing specs, and keep working without the LLM. Functional demo on provenance-aware synthetic data, with live marketplace integration planned.",
+    stack: ["Python", "FastAPI", "React", "TypeScript", "Google Gemini"],
+    year: "2026",
+  },
+  {
     title: "Kubernetes Platform Migration",
     challenge:
       "Migrating a monolithic legacy stack onto a containerized Kubernetes platform with zero downtime across 20+ services.",
@@ -194,7 +207,7 @@ export default function Home() {
             </span>
             saifullah-shah
           </a>
-          <ul className="hidden items-center gap-8 font-mono text-sm text-slate-400 md:flex">
+          <ul className="hidden items-center gap-6 font-mono text-sm text-slate-400 md:flex lg:gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a href={link.href} className="transition-colors hover:text-emerald-400">
@@ -415,11 +428,66 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Agentic workflow */}
+      <section
+        id="workflow"
+        className="relative scroll-mt-24 overflow-hidden border-t border-white/10 bg-[#0d1424]"
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,211,238,0.06),transparent_60%)]" />
+        <div className="relative mx-auto max-w-6xl px-6 py-24">
+          <Reveal>
+            <p className="mb-2 font-mono text-sm text-emerald-400">
+              03. Agentic workflow
+            </p>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
+              How I build AI systems
+            </h2>
+            <p className="mb-12 max-w-2xl text-lg leading-8 text-slate-300">
+              I design AI systems that reason about a task, break it into steps,
+              use the right tools, and validate the result before responding.
+            </p>
+          </Reveal>
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+            <Reveal delay={120}>
+              <AgentLoop />
+            </Reveal>
+            <Reveal delay={200}>
+              <ul className="space-y-5">
+                {[
+                  {
+                    title: "Planning & decomposition",
+                    desc: "Break ambiguous goals into clear, executable steps.",
+                  },
+                  {
+                    title: "Tool use & grounding",
+                    desc: "Call APIs and search knowledge instead of guessing.",
+                  },
+                  {
+                    title: "Validation loops",
+                    desc: "Check outputs against constraints before returning them.",
+                  },
+                ].map((item) => (
+                  <li key={item.title} className="flex items-start gap-3">
+                    <span className="mt-2 text-cyan-400">&gt;</span>
+                    <div>
+                      <h3 className="font-semibold text-slate-200">{item.title}</h3>
+                      <p className="mt-1 text-sm leading-6 text-slate-400">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* Expertise */}
       <section className="border-t border-white/10 bg-[#0d1424]">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <Reveal>
-            <p className="mb-2 font-mono text-sm text-emerald-400">03. Expertise</p>
+            <p className="mb-2 font-mono text-sm text-emerald-400">04. Expertise</p>
             <h2 className="mb-12 text-3xl font-bold tracking-tight md:text-4xl">
               Key expertise highlights
             </h2>
@@ -444,7 +512,7 @@ export default function Home() {
       <section id="skills" className="border-t border-white/10">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <Reveal>
-            <p className="mb-2 font-mono text-sm text-emerald-400">04. Skills</p>
+            <p className="mb-2 font-mono text-sm text-emerald-400">05. Skills</p>
             <h2 className="mb-12 text-3xl font-bold tracking-tight md:text-4xl">
               Technical toolkit
             </h2>
@@ -481,7 +549,7 @@ export default function Home() {
       <section id="journey" className="border-t border-white/10 bg-[#0d1424]">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <Reveal>
-            <p className="mb-2 font-mono text-sm text-emerald-400">05. Journey</p>
+            <p className="mb-2 font-mono text-sm text-emerald-400">06. Journey</p>
             <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl">
               Professional journey
             </h2>
@@ -523,7 +591,7 @@ export default function Home() {
       <section id="contact" className="border-t border-white/10">
         <div className="mx-auto max-w-3xl px-6 py-24 text-center">
           <Reveal>
-            <p className="mb-2 font-mono text-sm text-emerald-400">06. Contact</p>
+            <p className="mb-2 font-mono text-sm text-emerald-400">07. Contact</p>
             <h2 className="mb-6 text-3xl font-bold tracking-tight md:text-4xl">
               Let&apos;s build robust infrastructure together
             </h2>

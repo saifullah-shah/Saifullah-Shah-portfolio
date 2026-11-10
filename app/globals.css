@@ -101,6 +101,12 @@ html {
   }
 }
 
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes scanline {
   0% {
     top: -10%;
@@ -140,6 +146,10 @@ html {
 
 .animate-pipeline-flow {
   animation: pipeline-flow 2.5s linear infinite;
+}
+
+.animate-orbit {
+  animation: orbit-spin 9s linear infinite;
 }
 
 .animate-scanline {
@@ -202,7 +212,8 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   .chat-panel-enter,
-  .chat-fab-enter {
+  .chat-fab-enter,
+  .animate-orbit {
     animation: none;
   }
 }
