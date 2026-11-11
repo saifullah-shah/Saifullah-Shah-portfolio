@@ -10,7 +10,7 @@ const metrics = [
     decimals: 1,
   },
   { value: 165, suffix: "+", label: "Automated tests written", decimals: 0 },
-  { value: 2, suffix: "", label: "End-to-end AI projects built", decimals: 0 },
+  { value: 3, suffix: "", label: "End-to-end AI projects built", decimals: 0 },
   { value: 1, suffix: "", label: "Govt. recognition for AI work", decimals: 0 },
 ];
 
