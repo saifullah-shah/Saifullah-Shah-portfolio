@@ -53,6 +53,7 @@
 - GitLab
 - VS Code
 - Postman
+- Make.com
 - OpenCode
 
 ## Testing & Quality

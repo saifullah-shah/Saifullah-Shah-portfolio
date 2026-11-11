@@ -20,7 +20,7 @@ AI Engineer with hands-on experience in AI application development, Generative A
 ## Highlights
 - 1.5+ years of AI engineering experience (Mar 2025 - Sep 2026).
 - 165+ automated tests written, including 123 Python unit tests and 42 end-to-end HTTP assertions.
-- 2 end-to-end AI projects built: The Buying Studio and GenomeIQ.
+- 3 AI projects built: The Buying Studio, GenomeIQ, and an AI-powered LinkedIn content automation workflow.
 - GenomeIQ received formal appreciation from Khyber Pakhtunkhwa government officials.
 
 ## Background

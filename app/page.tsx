@@ -156,7 +156,7 @@ const skillCategories = [
   {
     title: "Tools & Platforms",
     icon: GithubIcon,
-    skills: ["Git", "GitHub", "GitLab", "VS Code", "Postman", "OpenCode"],
+    skills: ["Git", "GitHub", "GitLab", "VS Code", "Postman", "Make.com", "OpenCode"],
   },
   {
     title: "Testing & Quality",
@@ -203,6 +203,17 @@ const projects = [
       "Automated the genomic classification workflow and demonstrated AI's potential in bioinformatics. Presented to Khyber Pakhtunkhwa government officials, receiving formal appreciation and consideration for regional implementation.",
     stack: ["Python", "SVM", "React", "MongoDB", "Machine Learning"],
     year: "FYP",
+  },
+  {
+    title: "AI LinkedIn Content Automation",
+    challenge:
+      "Consistently creating LinkedIn content requires time spent researching current topics, selecting ideas, writing posts, and publishing them.",
+    solution:
+      "Built a Make.com workflow that researches topics in a chosen niche and generates five AI topic suggestions with one-line descriptions for human approval. The selected topic is passed to an LLM that writes a structured LinkedIn post with contextual hashtags, which is then published automatically via the LinkedIn API.",
+    impact:
+      "Turns topic research into ready-to-publish LinkedIn content with a human approving the direction, reducing manual research and writing effort through a reusable semi-automated pipeline.",
+    stack: ["Make.com", "AI / LLM", "LinkedIn API", "Workflow Automation"],
+    year: "2026",
   },
   {
     title: "Kubernetes Platform Migration",

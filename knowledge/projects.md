@@ -33,6 +33,24 @@ Automated the genomic classification workflow and demonstrated AI's potential in
 ### Technologies
 Python, React, HTML5, CSS3, MongoDB, SVM Classifier, Machine Learning
 
+## AI-Powered LinkedIn Content Automation
+
+An AI-powered LinkedIn content automation workflow built with Make.com that automates topic research, content generation, hashtag creation, and LinkedIn publishing while keeping a human in control of topic selection.
+
+### What I Built
+- Built a Make.com workflow that researches relevant and current topics in a selected content niche.
+- Used AI to generate five potential LinkedIn post topics, each with a one-line description, for human review.
+- Passed the human-selected topic to an LLM that writes an engaging, structured LinkedIn post.
+- Generated relevant hashtags to complement each post.
+- Integrated the LinkedIn API to publish the completed post automatically.
+- Kept a human-in-the-loop approval step so the user controls the content direction.
+
+### Impact
+Transforms topic research into ready-to-publish LinkedIn content with minimal manual intervention, reducing repetitive research and writing effort while preserving human control over content direction. The result is a reusable AI-powered content pipeline.
+
+### Technologies
+Make.com, AI / LLM, LinkedIn API, Workflow Automation, No-Code Automation
+
 ## Kubernetes Platform Migration
 
 Migrated a monolithic legacy stack to a containerized Kubernetes platform without disrupting service.
