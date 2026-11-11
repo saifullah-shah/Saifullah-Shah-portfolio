@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "AI Engineer",
     "Agentic AI",
     "LLM Applications",
-    "RAG",
+    "RAG concepts",
     "MCP",
     "Generative AI",
     "AI Automation",

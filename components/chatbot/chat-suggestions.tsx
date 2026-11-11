@@ -14,7 +14,7 @@ export default function ChatSuggestions({
 }) {
   return (
     <div className="border-t border-white/10 px-4 py-3">
-      <p className="mb-2 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-slate-500">
+      <p className="mb-2 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-slate-400">
         <Sparkles className="h-3 w-3 text-emerald-400" aria-hidden="true" />
         Suggested questions
       </p>

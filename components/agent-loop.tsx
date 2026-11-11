@@ -80,10 +80,10 @@ export default function AgentLoop() {
           agent: autonomous-workflow
         </div>
         <div className="flex items-center gap-3">
-          <span className="font-mono text-[10px] uppercase tracking-wider text-slate-600">
+          <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400">
             illustrative workflow
           </span>
-          <span className="font-mono text-xs text-slate-500">
+          <span className="font-mono text-xs text-slate-400">
             trigger: event: new task
           </span>
         </div>
@@ -130,7 +130,7 @@ export default function AgentLoop() {
                       className={`h-4 w-4 ${
                         isCurrent
                           ? "animate-glow text-emerald-400"
-                          : "text-slate-500"
+                          : "text-slate-400"
                       }`}
                     />
                   )}
@@ -141,7 +141,7 @@ export default function AgentLoop() {
                       ? "text-cyan-400"
                       : isDone
                         ? "text-emerald-400/70"
-                        : "text-slate-500"
+                        : "text-slate-400"
                   }`}
                 >
                   {item.label}
@@ -152,7 +152,7 @@ export default function AgentLoop() {
         })}
 
         <div className="absolute inset-0 flex flex-col items-center justify-center px-12 text-center">
-          <span className="font-mono text-[10px] uppercase tracking-wider text-slate-500">
+          <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400">
             loop status
           </span>
           <span
@@ -162,7 +162,7 @@ export default function AgentLoop() {
           >
             {isComplete ? "complete" : currentStage?.label}
           </span>
-          <span className="mt-1 max-w-[140px] font-mono text-[10px] leading-4 text-slate-500">
+          <span className="mt-1 max-w-[140px] font-mono text-[10px] leading-4 text-slate-400">
             {isComplete ? "result validated" : currentStage?.status}
           </span>
         </div>
@@ -198,7 +198,7 @@ export default function AgentLoop() {
                     className={`h-4 w-4 ${
                       isCurrent
                         ? "animate-glow text-emerald-400"
-                        : "text-slate-500"
+                        : "text-slate-400"
                     }`}
                   />
                 )}
@@ -210,12 +210,12 @@ export default function AgentLoop() {
                       ? "text-cyan-400"
                       : isDone
                         ? "text-emerald-400/70"
-                        : "text-slate-500"
+                        : "text-slate-400"
                   }`}
                 >
                   {item.label}
                 </p>
-                <p className="truncate font-mono text-[10px] text-slate-500">
+                <p className="truncate font-mono text-[10px] text-slate-400">
                   {isDone || isCurrent ? item.status : "pending"}
                 </p>
               </div>
@@ -224,7 +224,7 @@ export default function AgentLoop() {
         })}
       </ol>
 
-      <div className="mt-6 border-t border-white/10 pt-4 font-mono text-xs text-slate-500">
+      <div className="mt-6 border-t border-white/10 pt-4 font-mono text-xs text-slate-400">
         <span className="text-emerald-400">$</span> status:{" "}
         {isComplete
           ? "loop complete · 2 tools · 1.4s"

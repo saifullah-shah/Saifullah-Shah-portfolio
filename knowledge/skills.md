@@ -9,7 +9,7 @@
 
 ## Generative AI & LLMs
 - Large Language Models (LLMs)
-- Retrieval-Augmented Generation (RAG)
+- Retrieval-Augmented Generation (RAG) concepts
 - Prompt Engineering
 - Google Gemini
 - Groq

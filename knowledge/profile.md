@@ -9,13 +9,13 @@ AI Engineer
 ## Professional Focus
 - Agentic AI and multi-agent systems
 - Generative AI and LLM applications
-- Retrieval-Augmented Generation (RAG) and prompt engineering
+- Retrieval-Augmented Generation (RAG) concepts and prompt engineering
 - Model Context Protocol (MCP) and context-aware AI
 - AI workflow automation
 - Full-stack AI development
 
 ## Summary
-AI Engineer with hands-on experience in AI application development, Generative AI, Large Language Models (LLMs), and Agentic AI systems. Skilled in LLM integration, AI agents, multi-agent systems, Model Context Protocol (MCP), and Retrieval-Augmented Generation (RAG). Proficient in Python, JavaScript, TypeScript, API development, and AI-powered workflow automation. Experienced in developing scalable, intelligent applications, LLM-powered chatbots, and knowledge-based AI assistants to solve real-world business problems.
+AI Engineer with hands-on experience in AI application development, Generative AI, Large Language Models (LLMs), and Agentic AI systems. Skilled in LLM integration, AI agents, multi-agent systems, Model Context Protocol (MCP), and Retrieval-Augmented Generation (RAG) concepts. Proficient in Python, JavaScript, TypeScript, API development, and AI-powered workflow automation. Experienced in developing scalable, intelligent applications, LLM-powered chatbots, and knowledge-based AI assistants to solve real-world business problems.
 
 ## Highlights
 - 1.5+ years of AI engineering experience (Mar 2025 - Sep 2026).

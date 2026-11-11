@@ -49,9 +49,8 @@ export default function ChatWindow({
           <h2 className="truncate text-sm font-semibold text-slate-100">
             Portfolio Assistant
           </h2>
-          <p className="flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-emerald-400">
-            <span className="animate-status-ping h-1.5 w-1.5 rounded-full bg-emerald-400 motion-reduce:animate-none" />
-            Online
+          <p className="font-mono text-[10px] uppercase tracking-wider text-slate-400">
+            Portfolio knowledge base
           </p>
         </div>
 

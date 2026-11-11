@@ -4,7 +4,7 @@
 Designing AI agents and multi-agent systems that plan, use tools, and automate complex tasks.
 
 ## LLM Applications & RAG
-Building LLM-powered chatbots and knowledge assistants with prompt engineering, contextual data, and retrieval-augmented generation.
+Building LLM-powered chatbots and knowledge assistants with prompt engineering, contextual data, and retrieval-augmented generation (RAG) concepts.
 
 ## MCP & Context-Aware AI
 Applying Model Context Protocol for context-aware AI systems and interoperable tool integration.

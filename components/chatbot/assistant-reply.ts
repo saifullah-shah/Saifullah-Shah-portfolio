@@ -1,4 +1,8 @@
-import type { ChatRequest, ChatResponse } from "@/lib/chat/types";
+import type {
+  ChatHistoryMessage,
+  ChatRequest,
+  ChatResponse,
+} from "@/lib/chat/types";
 
 /**
  * Client-side bridge to the server chat endpoint.
@@ -8,8 +12,12 @@ import type { ChatRequest, ChatResponse } from "@/lib/chat/types";
  * failure so the caller can render a single friendly message instead of
  * leaking transport details to the visitor.
  */
-export async function createAssistantReply(message: string): Promise<string> {
-  const payload: ChatRequest = { message };
+export async function createAssistantReply(
+  message: string,
+  history: ChatHistoryMessage[] = [],
+): Promise<string> {
+  const payload: ChatRequest =
+    history.length > 0 ? { message, history } : { message };
 
   let response: Response;
   try {

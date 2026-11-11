@@ -6,8 +6,22 @@
  * pulling any server-side code into the browser bundle.
  */
 
+/** Maximum length of a single chat message. */
+export const MAX_CHAT_MESSAGE_LENGTH = 2000;
+
+/** Maximum number of prior messages sent with a request. */
+export const MAX_CHAT_HISTORY_MESSAGES = 8;
+
+export type ChatHistoryRole = "user" | "assistant";
+
+export interface ChatHistoryMessage {
+  role: ChatHistoryRole;
+  content: string;
+}
+
 export interface ChatRequest {
   message: string;
+  history?: ChatHistoryMessage[];
 }
 
 export interface ChatResponse {

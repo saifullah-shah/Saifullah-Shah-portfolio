@@ -5,6 +5,7 @@ import { MessageCircle, X } from "lucide-react";
 import ChatWindow from "./chat-window";
 import { ASSISTANT_ERROR_MESSAGE, WELCOME_MESSAGE } from "./data";
 import { createAssistantReply } from "./assistant-reply";
+import { MAX_CHAT_HISTORY_MESSAGES } from "@/lib/chat/types";
 import type { ChatMessage } from "./types";
 
 let messageSequence = 0;
@@ -36,10 +37,20 @@ export default function Chatbot() {
       const text = message.trim();
       if (text.length === 0 || isPending) return;
 
+      // Keep recent turns so follow-up questions have context. The welcome
+      // message and the generic error bubble are UI-only, not conversation.
+      const history = messages
+        .filter(
+          (item) =>
+            item.id !== WELCOME_MESSAGE.id && item.text !== ASSISTANT_ERROR_MESSAGE,
+        )
+        .slice(-MAX_CHAT_HISTORY_MESSAGES)
+        .map((item) => ({ role: item.role, content: item.text }));
+
       setMessages((previous) => [...previous, { id: nextMessageId(), role: "user", text }]);
       setIsPending(true);
 
-      void createAssistantReply(text)
+      void createAssistantReply(text, history)
         .then((reply) => {
           if (!isMountedRef.current) return;
           setMessages((previous) => [
@@ -57,10 +68,15 @@ export default function Chatbot() {
           setIsPending(false);
         });
     },
-    [isPending],
+    [isPending, messages],
   );
 
-  const closeChat = useCallback(() => setIsOpen(false), []);
+  const closeChat = useCallback(() => {
+    setIsOpen(false);
+    // The close button unmounts with the panel. Return focus to the launcher
+    // after the panel is gone so keyboard users keep their place.
+    window.requestAnimationFrame(() => launcherRef.current?.focus());
+  }, []);
 
   const handleSelectSuggestion = useCallback(
     (question: string) => {

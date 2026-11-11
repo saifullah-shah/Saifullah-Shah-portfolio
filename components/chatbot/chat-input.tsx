@@ -3,6 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import type { ChangeEvent, FormEvent, KeyboardEvent } from "react";
 import { LoaderCircle, Send } from "lucide-react";
+import { MAX_CHAT_MESSAGE_LENGTH } from "@/lib/chat/types";
 
 const MAX_TEXTAREA_HEIGHT_PX = 120;
 
@@ -81,19 +82,20 @@ export default function ChatInput({
         name="message"
         value={value}
         rows={1}
+        maxLength={MAX_CHAT_MESSAGE_LENGTH}
         disabled={isBlocked}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         aria-describedby={hintId}
         placeholder={isPending ? "The assistant is replying…" : "Ask about experience, skills, projects…"}
-        className="max-h-[120px] min-h-[2.5rem] flex-1 resize-none rounded-lg border border-white/10 bg-[#0d1424] px-3 py-2.5 text-sm text-slate-200 placeholder:text-slate-500 focus-visible:border-emerald-400/40 focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-emerald-400 disabled:cursor-not-allowed disabled:opacity-60"
+        className="max-h-[120px] min-h-[2.5rem] flex-1 resize-none rounded-lg border border-white/10 bg-[#0d1424] px-3 py-2.5 text-sm text-slate-200 placeholder:text-slate-400 focus-visible:border-emerald-400/40 focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-emerald-400 disabled:cursor-not-allowed disabled:opacity-60"
       />
 
       <button
         type="submit"
         disabled={!canSend}
         aria-label={isPending ? "Waiting for the assistant to reply" : "Send message"}
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-400 text-[#0a0f1a] transition-colors hover:bg-emerald-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-slate-500 motion-reduce:transition-none"
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-400 text-[#0a0f1a] transition-colors hover:bg-emerald-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-slate-400 motion-reduce:transition-none"
       >
         {isPending ? (
           <LoaderCircle
@@ -106,7 +108,8 @@ export default function ChatInput({
       </button>
 
       <p id={hintId} className="sr-only">
-        Press Enter to send. Press Shift plus Enter for a new line.
+        Press Enter to send. Press Shift plus Enter for a new line. Messages are
+        limited to {MAX_CHAT_MESSAGE_LENGTH.toLocaleString()} characters.
       </p>
     </form>
   );

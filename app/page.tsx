@@ -18,7 +18,6 @@ import {
   Terminal,
   Cloud,
   Workflow,
-  ExternalLink,
   ChevronDown,
   Database,
   Phone,
@@ -61,6 +60,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Projects", href: "#projects" },
   { label: "Workflow", href: "#workflow" },
+  { label: "Expertise", href: "#expertise" },
   { label: "Skills", href: "#skills" },
   { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
@@ -75,7 +75,7 @@ const expertise = [
   {
     icon: Brain,
     title: "LLM Applications & RAG",
-    desc: "Building LLM-powered chatbots and knowledge assistants with prompt engineering, contextual data, and retrieval-augmented generation.",
+    desc: "Building LLM-powered chatbots and knowledge assistants with prompt engineering, contextual data, and retrieval-augmented generation (RAG) concepts.",
   },
   {
     icon: Network,
@@ -116,7 +116,7 @@ const skillCategories = [
     icon: Brain,
     skills: [
       "LLMs",
-      "RAG",
+      "RAG concepts",
       "Prompt Engineering",
       "Gemini",
       "Groq",
@@ -207,30 +207,33 @@ const projects = [
   {
     title: "Kubernetes Platform Migration",
     challenge:
-      "Migrating a monolithic legacy stack onto a containerized Kubernetes platform with zero downtime across 20+ services.",
+      "Migrating a monolithic legacy stack onto a containerized Kubernetes platform without disrupting service.",
     solution:
       "Built GitOps-driven cluster provisioning with Terraform and Argo CD, introduced Helm charts, and established autoscaling policies.",
-    impact: "Reduced deployment time by 75% and improved uptime from 98.9% to 99.9%.",
+    impact:
+      "Standardized releases with GitOps, consistent Helm packaging, and autoscaling, reducing manual deployment overhead and improving rollout consistency.",
     stack: ["Terraform", "Kubernetes", "Helm", "Argo CD", "AWS"],
     year: "2025",
   },
   {
     title: "CI/CD Pipeline Overhaul",
     challenge:
-      "Manual, error-prone releases taking over a day to push features to production.",
+      "Manual, error-prone release process that slowed feature delivery.",
     solution:
       "Designed multi-stage Jenkins pipelines with parallel test execution, artifact caching, and automated rollbacks.",
-    impact: "Cut release cycles from 24 hours to 20 minutes with a 90% reduction in failed deployments.",
+    impact:
+      "Automated multi-stage builds, tests, and rollbacks, replacing manual releases with a repeatable pipeline.",
     stack: ["Jenkins", "Docker", "GitLab CI", "SonarQube"],
     year: "2024",
   },
   {
     title: "Observability Stack Rollout",
     challenge:
-      "Blind deployments with no insight into system health or post-release regressions.",
+      "Limited visibility into system health and post-release regressions.",
     solution:
       "Deployed Prometheus, Grafana, Loki, and the ELK Stack with centralized logging and alerting runbooks.",
-    impact: "Increased MTTR improvement by 60% and achieved full visibility across all environments.",
+    impact:
+      "Centralized logs, metrics, and alerts with runbooks, improving incident visibility and response.",
     stack: ["Prometheus", "Grafana", "Loki", "ELK Stack"],
     year: "2023",
   },
@@ -274,7 +277,7 @@ const personJsonLd = {
     "Agentic AI",
     "Multi-agent systems",
     "LLM applications",
-    "Retrieval-augmented generation",
+    "Retrieval-augmented generation concepts",
     "Model Context Protocol",
     "Generative AI",
     "AI workflow automation",
@@ -398,7 +401,7 @@ export default function Home() {
         </div>
         <a
           href="#about"
-          className="absolute bottom-2 text-slate-500 transition-colors hover:text-emerald-400"
+          className="absolute bottom-2 text-slate-400 transition-colors hover:text-emerald-400"
           aria-label="Scroll down"
         >
           <ChevronDown className="h-6 w-6 animate-bounce" />
@@ -419,7 +422,7 @@ export default function Home() {
               <p className="max-w-2xl text-lg leading-8 text-slate-300">
                 I&apos;m an AI Engineer with hands-on experience building AI
                 applications, Generative AI, LLMs, and Agentic AI systems. I specialize in
-                LLM integration, AI agents, multi-agent systems, MCP, and RAG — grounded in
+                LLM integration, AI agents, multi-agent systems, MCP, and RAG concepts — grounded in
                 a background of technical instruction. I focus on turning complex models
                 into reliable, production-ready assistants and intelligent workflows.
               </p>
@@ -430,7 +433,7 @@ export default function Home() {
                 <ul className="space-y-3 text-slate-300">
                   {[
                     "Agentic AI, AI agents & multi-agent systems",
-                    "LLM applications, RAG & prompt engineering",
+                    "LLM applications, RAG concepts & prompt engineering",
                     "MCP & context-aware AI integration",
                     "Generative AI grounding, guardrails & fallbacks",
                     "AI workflow automation & API integrations",
@@ -474,14 +477,11 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <Reveal key={project.title} delay={index * 100}>
-              <article
-                className="group flex h-full flex-col rounded-xl border border-white/10 bg-[#0d1424] p-6 transition-all hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-lg hover:shadow-emerald-400/5"
-              >
-                <div className="mb-4 flex items-center justify-between">
+              <article className="flex h-full flex-col rounded-xl border border-white/10 bg-[#0d1424] p-6 transition-all hover:-translate-y-1 hover:border-emerald-400/40 hover:shadow-lg hover:shadow-emerald-400/5">
+                <div className="mb-4">
                   <span className="rounded-md bg-[#0a0f1a] px-2 py-1 font-mono text-xs text-emerald-400">
                     {project.year}
                   </span>
-                  <ExternalLink className="h-4 w-4 text-slate-500 transition-colors group-hover:text-emerald-400" />
                 </div>
                 <h3 className="mb-3 text-lg font-semibold">{project.title}</h3>
                 <div className="space-y-4 text-sm leading-6 text-slate-400">
@@ -514,7 +514,7 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
-          <p className="mt-8 text-center text-sm text-slate-500">
+          <p className="mt-8 text-center text-sm text-slate-400">
             More projects and case studies on{" "}
             <a
               href={GITHUB_URL}
@@ -582,7 +582,7 @@ export default function Home() {
       </section>
 
       {/* Expertise */}
-      <section className="border-t border-white/10 bg-[#0d1424]">
+      <section id="expertise" className="scroll-mt-24 border-t border-white/10 bg-[#0d1424]">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <Reveal>
             <p className="mb-2 font-mono text-sm text-emerald-400">04. Expertise</p>
@@ -666,7 +666,7 @@ export default function Home() {
                 <span className="absolute -left-[33px] top-1.5 h-3 w-3 rounded-full bg-emerald-400 ring-4 ring-emerald-400/20 md:-left-[41px]" />
                 <p className="font-mono text-sm text-emerald-400">{entry.period}</p>
                 <h3 className="mt-1 text-lg font-semibold">
-                  {entry.role} <span className="text-slate-500">@</span>{" "}
+                  {entry.role} <span className="text-slate-400">@</span>{" "}
                   <span className="text-slate-300">{entry.org}</span>
                 </h3>
                 <ul className="mt-2 space-y-1.5 text-slate-400">
@@ -744,7 +744,7 @@ export default function Home() {
       </main>
 
       <footer className="border-t border-white/10 py-6">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 font-mono text-xs text-slate-500 md:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 font-mono text-xs text-slate-400 md:flex-row">
           <p>© {new Date().getFullYear()} {SITE_NAME}</p>
           <p>Built with Next.js &amp; Tailwind CSS</p>
           <p>Ship intelligent systems_</p>

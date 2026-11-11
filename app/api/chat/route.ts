@@ -2,7 +2,15 @@ import Groq from "groq-sdk";
 import { NextResponse } from "next/server";
 import { loadKnowledge } from "@/lib/chat/knowledge";
 import { checkRateLimit, getClientKey } from "@/lib/chat/rate-limit";
-import type { ChatErrorResponse, ChatResponse } from "@/lib/chat/types";
+import {
+  MAX_CHAT_HISTORY_MESSAGES,
+  MAX_CHAT_MESSAGE_LENGTH,
+} from "@/lib/chat/types";
+import type {
+  ChatErrorResponse,
+  ChatHistoryMessage,
+  ChatResponse,
+} from "@/lib/chat/types";
 
 /**
  * Server-side chat endpoint.
@@ -13,9 +21,6 @@ export const runtime = "nodejs";
 
 /** Groq model used by the portfolio assistant. */
 const GROQ_MODEL = "openai/gpt-oss-20b";
-
-/** Maximum user message size. */
-const MAX_MESSAGE_LENGTH = 2000;
 
 /** Maximum time allowed for the Groq request. */
 const GROQ_TIMEOUT_MS = 30_000;
@@ -57,6 +62,7 @@ const SYSTEM_PROMPT = [
   "- If the requested information is not present in the portfolio knowledge, say that the information is not available in the portfolio knowledge.",
   "- Never invent, assume, infer, or fill gaps using outside knowledge.",
   "- Never fabricate statistics, dates, company names, credentials, responsibilities, skills, projects, or achievements.",
+  "- Use the supplied conversation history only to understand follow-up questions and references; factual answers must still come from the portfolio knowledge base.",
   "",
   "OUT-OF-SCOPE QUESTIONS:",
   "- If a question is unrelated to Syed Saifullah Shah or his portfolio, politely refuse to answer it.",
@@ -143,14 +149,73 @@ export async function POST(request: Request): Promise<NextResponse> {
   }
 
   // 6. Reject oversized messages.
-  if (message.length > MAX_MESSAGE_LENGTH) {
+  if (message.length > MAX_CHAT_MESSAGE_LENGTH) {
     return errorResponse(
-      `The 'message' field must be ${MAX_MESSAGE_LENGTH} characters or fewer.`,
+      `The 'message' field must be ${MAX_CHAT_MESSAGE_LENGTH} characters or fewer.`,
       413,
     );
   }
 
-  // 7. Read the Groq API key from the server environment.
+  // 7. Validate optional conversation history.
+  const history: ChatHistoryMessage[] = [];
+
+  if ("history" in body) {
+    const rawHistory = body.history;
+
+    if (!Array.isArray(rawHistory)) {
+      return errorResponse("The 'history' field must be an array.", 400);
+    }
+
+    if (rawHistory.length > MAX_CHAT_HISTORY_MESSAGES) {
+      return errorResponse(
+        `The 'history' field must contain at most ${MAX_CHAT_HISTORY_MESSAGES} messages.`,
+        400,
+      );
+    }
+
+    for (const item of rawHistory) {
+      if (!isRecord(item)) {
+        return errorResponse("Each history item must be an object.", 400);
+      }
+
+      const role = item.role;
+      const content = item.content;
+
+      if (role !== "user" && role !== "assistant") {
+        return errorResponse(
+          "Each history item must have a role of 'user' or 'assistant'.",
+          400,
+        );
+      }
+
+      if (typeof content !== "string") {
+        return errorResponse(
+          "Each history item must have a string 'content' field.",
+          400,
+        );
+      }
+
+      const trimmedContent = content.trim();
+
+      if (trimmedContent.length === 0) {
+        return errorResponse(
+          "History message content must not be empty.",
+          400,
+        );
+      }
+
+      if (trimmedContent.length > MAX_CHAT_MESSAGE_LENGTH) {
+        return errorResponse(
+          `History message content must be ${MAX_CHAT_MESSAGE_LENGTH} characters or fewer.`,
+          413,
+        );
+      }
+
+      history.push({ role, content: trimmedContent });
+    }
+  }
+
+  // 8. Read the Groq API key from the server environment.
   const apiKey = process.env.GROQ_API_KEY;
 
   if (!apiKey || apiKey.trim().length === 0) {
@@ -162,10 +227,10 @@ export async function POST(request: Request): Promise<NextResponse> {
   }
 
   try {
-    // 8. Initialize Groq.
+    // 9. Initialize Groq.
     const groq = new Groq({ apiKey });
 
-    // 9. Build the system message with portfolio knowledge.
+    // 10. Build the system message with portfolio knowledge.
     const systemContent = HAS_KNOWLEDGE
       ? `${SYSTEM_PROMPT}
 
@@ -174,7 +239,7 @@ ${KNOWLEDGE_BASE}
 </knowledge_base>`
       : SYSTEM_PROMPT;
 
-    // 10. Send the user's message and portfolio knowledge to Groq.
+    // 11. Send the conversation and portfolio knowledge to Groq.
     const completion = await groq.chat.completions.create(
       {
         model: GROQ_MODEL,
@@ -184,6 +249,7 @@ ${KNOWLEDGE_BASE}
             role: "system",
             content: systemContent,
           },
+          ...history,
           {
             role: "user",
             content: message,
@@ -198,7 +264,7 @@ ${KNOWLEDGE_BASE}
       },
     );
 
-    // 11. Extract the generated answer.
+    // 12. Extract the generated answer.
     const answer = completion.choices[0]?.message?.content?.trim();
 
     if (!answer) {
@@ -207,10 +273,10 @@ ${KNOWLEDGE_BASE}
       return errorResponse(GENERIC_UPSTREAM_ERROR, 502);
     }
 
-    // 12. Return the answer to the chatbot UI.
+    // 13. Return the answer to the chatbot UI.
     return NextResponse.json<ChatResponse>({ answer });
   } catch (error: unknown) {
-    // 13. Log the real error server-side.
+    // 14. Log the real error server-side.
     const status = hasStatus(error) ? error.status : undefined;
 
     console.error(
@@ -220,17 +286,17 @@ ${KNOWLEDGE_BASE}
       error instanceof Error ? error.message : "Unknown error",
     );
 
-    // 14. Handle rate limiting.
+    // 15. Handle rate limiting.
     if (status === 429) {
       return errorResponse(GENERIC_UPSTREAM_ERROR, 429);
     }
 
-    // 15. Handle timeout.
+    // 16. Handle timeout.
     if (error instanceof Groq.APIConnectionTimeoutError) {
       return errorResponse(GENERIC_UPSTREAM_ERROR, 504);
     }
 
-    // 16. Handle other Groq errors.
+    // 17. Handle other Groq errors.
     return errorResponse(GENERIC_UPSTREAM_ERROR, 502);
   }
 }

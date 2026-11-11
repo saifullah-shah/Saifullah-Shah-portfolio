@@ -35,7 +35,7 @@ Python, React, HTML5, CSS3, MongoDB, SVM Classifier, Machine Learning
 
 ## Kubernetes Platform Migration
 
-Migrated a monolithic legacy stack to a containerized Kubernetes platform across 20+ services with zero downtime.
+Migrated a monolithic legacy stack to a containerized Kubernetes platform without disrupting service.
 
 ### What I Built
 - Built GitOps-driven cluster provisioning with Terraform and Argo CD.
@@ -43,7 +43,7 @@ Migrated a monolithic legacy stack to a containerized Kubernetes platform across
 - Established autoscaling policies for the containerized platform.
 
 ### Impact
-Reduced deployment time by 75% and improved uptime from 98.9% to 99.9%.
+Standardized releases with GitOps, consistent Helm packaging, and autoscaling, reducing manual deployment overhead and improving rollout consistency.
 
 ### Technologies
 Terraform, Kubernetes, Helm, Argo CD, AWS
@@ -57,7 +57,7 @@ Replaced manual, error-prone releases with automated multi-stage CI/CD pipelines
 - Added automated rollbacks to reduce deployment risk.
 
 ### Impact
-Cut release cycles from 24 hours to 20 minutes and reduced failed deployments by 90%.
+Automated multi-stage builds, tests, and rollbacks, replacing manual releases with a repeatable pipeline.
 
 ### Technologies
 Jenkins, Docker, GitLab CI, SonarQube
@@ -71,7 +71,7 @@ Implemented centralized monitoring, logging, and alerting across environments.
 - Added alerting runbooks to support incident response.
 
 ### Impact
-Improved MTTR by 60% and achieved full visibility across all environments.
+Centralized logs, metrics, and alerts with runbooks, improving incident visibility and response.
 
 ### Technologies
 Prometheus, Grafana, Loki, ELK Stack
